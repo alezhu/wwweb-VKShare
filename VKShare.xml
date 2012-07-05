@@ -51,15 +51,20 @@
    
     <!-- EXAMPLE of document context -->
     <activityAction context="document">
-		<execute action="http://vk.com/share.php?url={documentUrl}&amp;title={documentTitle}&amp;description={selection}">
-
+		<execute action="http://vk.com/share.php" method="get">
+			<parameter name="url" value="{documentUrl}"/>
+			<parameter name="title" value="{documentTitle}"/>
+			<parameter name="description" value="{selection}"/>
 		</execute>
     </activityAction>
     
     <!-- EXAMPLE of link context -->
     <activityAction context="link">
-		<execute action="http://vk.com/share.php?url={link}&amp;title={linkText}&amp;description={selection}">
-		</execute>
+		<execute action="http://vk.com/share.php" method="get">
+			<parameter name="url" value="{link}"/>
+			<parameter name="title" value="{linkText}"/>
+			<parameter name="description" value="{selection}"/>
+		</execute>		
     </activityAction>
   </activity>
 </openServiceDescription>
