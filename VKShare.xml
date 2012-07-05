@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- //////////////////////////////////////////////////////////////////////////
+//
+// OpenService XML Template : Accelerator Template for Internet Explorer 8 
+//
+// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
+// ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+// THE IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+// PARTICULAR PURPOSE. 
+//
+// Copyright (c) Microsoft Corporation. All rights reserved.
+//
+////////////////////////////////////////////////////////////////////////// -->
+
+<!-- This is a template for an XML-based accelerator.
+		See http://go.microsoft.com/fwlink/?LinkId=135504 for MSDN documentation.
+      Note that malformed XML will cause accelerator installation to fail.
+        One common mistake is using literal ampersands instead of &amp; -->
+
+<openServiceDescription xmlns="http://www.microsoft.com/schemas/openservicedescription/1.0">
+  <!-- REQUIRED - The 'OpenServiceDescription' element is the root node of the OpenService document. 
+         Namespace - This namespace defines all of the elements in this specification. -->
+
+  <homepageUrl>http://vk.com/</homepageUrl>
+  <!-- REQUIRED - The 'homepageURL' element contains the URL of the homepage of the service provider. -->
+
+  <display>
+    <!-- REQUIRED - The 'display' element contains the display properties that are presented to the user. -->
+
+    <name>Share on VKontakte</name>
+    <!-- REQUIRED - The 'name' element contains the name of the service. It should be able to stand alone and succinctly
+					describe the service. It is recommended to lead with the verb followed by the name of the service. 
+					The value must contain 50 or fewer characters of plain text. -->
+
+    <icon>http://vk.com/favicon.ico</icon>
+    <!-- OPTIONAL - The 'icon' element contains a URL that identifies the location of the icon that can be used in 
+					association with the service. -->
+
+    <!-- NOT USED - The 'description' element contains a brief description of the service.  -->
+  </display>
+
+
+  <activity category="Share">
+    <!-- The 'activity' element contains the information specific to the Accelerator service.
+            The 'category' attribute contains the type of Accelerator. The value must be plain text.
+            It is recommended to reuse a category that that other similar providers use. For example, all map providers 
+            should use the "Map" category. The category is treated as a display name in the Manage Add-Ons dialog; 
+            proper letter case is preferred. 
+            -->
+
+   
+    <!-- EXAMPLE of document context -->
+    <activityAction context="document">
+		<execute action="http://vk.com/share.php?url={documentUrl}&amp;title={documentTitle}&amp;description={selection}">
+
+		</execute>
+    </activityAction>
+    
+    <!-- EXAMPLE of link context -->
+    <activityAction context="link">
+		<execute action="http://vk.com/share.php?url={link}&amp;title={linkText}&amp;description={selection}">
+		</execute>
+    </activityAction>
+  </activity>
+</openServiceDescription>
